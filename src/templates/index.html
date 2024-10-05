@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Folium Map with Variable Control</title>
+    </head>
+    <body>
+        <h1>Folium Map with Variable Control</h1>
+        <form method="post">
+            <button name="year" value="2002">2002</button>
+            <button name="year" value="2003">2003</button>
+            <button name="year" value="2004">2004</button>
+        </form>
+        <div>
+            <iframe src="{{ url_for('static', filename='map.html') }}" height="500"></iframe>
+        </div>
+    </body>
+</html>

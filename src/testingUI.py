@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request
+from flask import Flask, render_template, render_template_string, request
 import folium
 
 app = Flask(__name__)
@@ -26,26 +26,27 @@ def test():
     # Save the map to an HTML file
     m.save('static/map.html')
 
+    return render_template('index.html')
     # Render the HTML file with buttons
-    return render_template_string('''
-        <!doctype html>
-        <html>
-            <head>
-                <title>Folium Map with Variable Control</title>
-            </head>
-            <body>
-                <h1>Folium Map with Variable Control</h1>
-                <form method="post">
-                    <button name="year" value="2002">2002</button>
-                    <button name="year" value="2003">2003</button>
-                    <button name="year" value="2004">2004</button>
-                </form>
-                <div>
-                    <iframe src="{{ url_for('static', filename='map.html') }}" height="500"></iframe>
-                </div>
-            </body>
-        </html>
-        ''')
+    # return render_template_string('''
+    #     <!doctype html>
+    #     <html>
+    #         <head>
+    #             <title>Folium Map with Variable Control</title>
+    #         </head>
+    #         <body>
+    #             <h1>Folium Map with Variable Control</h1>
+    #             <form method="post">
+    #                 <button name="year" value="2002">2002</button>
+    #                 <button name="year" value="2003">2003</button>
+    #                 <button name="year" value="2004">2004</button>
+    #             </form>
+    #             <div>
+    #                 <iframe src="{{ url_for('static', filename='map.html') }}" height="500"></iframe>
+    #             </div>
+    #         </body>
+    #     </html>
+    #     ''')
 
 
 if __name__ == '__main__':
