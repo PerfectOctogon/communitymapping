@@ -1,17 +1,23 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Folium Map with Variable Control</title>
-    </head>
-    <body>
-        <h1>Folium Map with Variable Control</h1>
-        <form method="post">
-            <button name="year" value="2002">2002</button>
-            <button name="year" value="2003">2003</button>
-            <button name="year" value="2004">2004</button>
-        </form>
-        <div>
-            <iframe src="{{ url_for('static', filename='map.html') }}" height="500"></iframe>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <button type="submit" name="year" value="2003">2003</button>
+        <button type="submit" name="year" value="2004">2004</button>
+        <button type="submit" name="year" value="2005">2005</button>
+        <button type="submit" name="year" value="2006">2006</button>
+        <button type="submit" name="year" value="2007">2007</button>
+        <button type="submit" name="year" value="2008">2008</button>
+        <button type="submit" name="source" value="Oil and Gas">Oil and Gas</button>
+        <button type="submit" name="source" value="Agriculture">Agriculture</button>
+    </form>
+    
+    
+    <iframe src="/static/map.html" height="500" width="800"></iframe>
+</body>
 </html>
